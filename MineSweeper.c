@@ -2,18 +2,15 @@
 #include <stdlib.h>
 #include <time.h>
 
-/*
-int faz_matriz(int algo){
-    /*
-    for (int i = 0; i < 6; i++){
-        for (int j = 0; j < 6; j++){
-            printf("%i [%i][%i] - ",algo[i], i,j);
-            if (j==5){
-                printf("\n");
-            }
-        }
+int faz_matriz(int *algo){
+    for (int i = 0; i < 5; i++){
+        for (int j = 0; j < 5; j++){
+            printf("%i - ",*algo);
+            if (j==4){
+                printf("\n"); }
+            algo++; }
     }
-}*/
+}
 
 int main(){
     int matriz[5][5];
@@ -24,15 +21,6 @@ int main(){
             matriz[i][j] = rand()%101; // pra criar numeros de 0 a 99
         }
     }
-    //faz_matriz(matriz);
-
-    for (int i = 0; i < 6; i++){
-        for (int j = 0; j < 6; j++){
-            printf("%i [%i][%i] - ",matriz[i][j], i,j);
-            if (j==5){
-                printf("\n");
-            }
-        }
-    }
+    faz_matriz(*matriz);
     return 0;
 }
